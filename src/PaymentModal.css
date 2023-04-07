@@ -1,0 +1,73 @@
+.payment-section {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+select {
+  background-color: #00f677;
+  border: none;
+  padding: 12px;
+  margin: 20px;
+
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+@media screen and (orientation: portrait) {
+  .payment-container {
+    position: absolute;
+    top: 20%;
+    left: 2.5%;
+    padding: 20px;
+    border-radius: 25px;
+
+    background: transparent;
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease-in-out;
+
+    -webkit-box-shadow: 0 10px 6px -6px #f7f5f5;
+    -moz-box-shadow: 0 10px 6px -6px #fbfbfb;
+    box-shadow: rgb(93, 89, 89) 0px 10px 36px 0px,
+      rgb(95, 88, 88) 0px 0px 0px 1px;
+
+    width: 95%;
+    height: 70%;
+  }
+}
+@media screen and (orientation: landscape) {
+  .payment-container {
+    position: absolute;
+    top: 15%;
+    left: 2.5%;
+    padding: 20px;
+    border-radius: 25px;
+
+    background: transparent;
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease-in-out;
+
+    -webkit-box-shadow: 0 10px 6px -6px #f7f5f5;
+    -moz-box-shadow: 0 10px 6px -6px #fbfbfb;
+    box-shadow: rgb(93, 89, 89) 0px 10px 36px 0px,
+      rgb(95, 88, 88) 0px 0px 0px 1px;
+
+    width: 95%;
+    height: 65%;
+    overflow: auto;
+  }
+
+  /* style the scrollbar */
+  .payment-container::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .payment-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .payment-container::-webkit-scrollbar-thumb {
+    background-color: rgb(11, 1, 1);
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+}

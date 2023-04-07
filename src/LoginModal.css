@@ -1,0 +1,60 @@
+.body-modal {
+  background-image: url("./assets/images/back_gray.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-modal {
+  border: 2px solid #a4a49f;
+  width: 300px;
+  height: 350px;
+  background: transparent;
+  position: relative;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+.transconnect {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+}
+/* .input-box {
+  width: 150px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: antiquewhite;
+  border-bottom: 3px solid black;
+} */
+.login-btn {
+  border-radius: 20px;
+  height: 40px;
+  width: 150px;
+  outline: none;
+  border: none;
+  color: #cfd6d9;
+  background-color: #1e2123;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-btn:active {
+  box-shadow: 0 0 10px rgba(244, 232, 232, 0.5);
+}
+
+.login-btn:hover {
+  background-color: #959ba4;
+  color: rgb(0, 0, 0);
+}
