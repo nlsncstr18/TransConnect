@@ -1,45 +1,77 @@
 import React, { useState } from "react";
 import "./PaymentModal.css";
-
+import Arrow from "./assets/icons/arrow.png";
+import DateTime from "./components/DateTime";
 const PaymentModal = () => {
-  const [selectedOptionFrom, setSelectedOptionFrom] = useState("option1");
-  const [selectedOptionTo, setSelectedOptionTo] = useState("option1");
+  const [selectedOptionFrom, setSelectedOptionFrom] = useState("From");
+  const [selectedOptionTo, setSelectedOptionTo] = useState("To");
+  const [sum, setSum] = useState(
+    Number(selectedOptionFrom) + Number(selectedOptionTo)
+  );
 
   const handleOptionFrom = (event) => {
     setSelectedOptionFrom(event.target.value);
+    setSum(Number(event.target.value) + Number(selectedOptionTo));
   };
+
   const handleOptionTo = (event) => {
     setSelectedOptionTo(event.target.value);
+    setSum(Number(selectedOptionFrom) + Number(event.target.value));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
   return (
     <>
       <div className="payment-container">
         <h1 className="payment-section">Payment Section</h1>
         <form onSubmit={handleSubmit}>
-          <label>
-            From:
-            <select value={selectedOptionFrom} onChange={handleOptionFrom}>
-              <option value="Cavite">Cavite</option>
-              <option value="Makati">Makati</option>
-              <option value="Pasay">Pasay</option>
-            </select>
-          </label>
-          <br />
-          <label>
-            To:
-            <select value={selectedOptionTo} onChange={handleOptionTo}>
-              <option value="Cavite">Cavite</option>
-              <option value="Makati">Makati</option>
-              <option value="Pasay">Pasay</option>
-            </select>
-          </label>
-          <br />
+          <div className="payment-info">
+            <label>
+              <select
+                className="option1"
+                value={selectedOptionFrom}
+                onChange={handleOptionFrom}
+              >
+                <option value="From" disabled selected>
+                  From:
+                </option>
+                <option value="25">Cavite</option>
+                <option value="10">Makati</option>
+                <option value="15">Pasay</option>
+              </select>
+            </label>
+            <div>
+              <img className="img-arrow" src={Arrow} alt="Icon" />
+            </div>
 
-          <button type="submit">Submit</button>
+            <label>
+              <select
+                className="option2"
+                value={selectedOptionTo}
+                onChange={handleOptionTo}
+              >
+                <option value="To" disabled selected>
+                  To:
+                </option>
+                <option value="12">Cavite</option>
+                <option value="11">Makati</option>
+                <option value="13">Pasay</option>
+              </select>
+            </label>
+            <br />
+          </div>
+          <div className="result">{sum ? `₱${sum}` : "₱0"}</div>
+          <div className="date-time">
+            <DateTime />
+          </div>
+          <div className="save-button">
+            <button className="savebutton" type="submit">
+              Save
+            </button>
+          </div>
         </form>
       </div>
     </>

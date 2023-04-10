@@ -10,17 +10,14 @@ import CapacityIcon from "../assets/icons/capacity.png";
 import LocationIcon from "../assets/icons/location.png";
 import PesoIcon from "../assets/icons/peso.png";
 import PaymentModal from "../PaymentModal";
-import Map, {
-  Marker,
-  NavigationControl,
-  Popup,
-  FullscreenControl,
-  GeolocateControl,
-} from "react-map-gl";
-// import CurrentLocation from "../components/CurrentLocation";
-// import Mapbox from "../components/Mapbox";
+import CurrentLocation from "../components/CurrentLocation";
 
 const DashBoard = () => {
+  const [viewport, setViewport] = useState({
+    longitude: 120.9842,
+    latitude: 14.5995,
+    zoom: 10,
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleToggleModal = () => {
@@ -36,8 +33,9 @@ const DashBoard = () => {
         <Mapbox />
         <div className="overlay">
           <DateTime />
+          <CurrentLocation />
         </div>
-        <div className="icons-container">
+        {/* <div className="icons-container">
           <div className="icons icons1">
             <a href="#">
               <img className="img-icon" src={PassengerIcon} alt="Icon" />
@@ -49,7 +47,7 @@ const DashBoard = () => {
           <div className="icons icons3">
             <img className="img-icon" src={LocationIcon} alt="Icon" />
           </div>
-        </div>
+        </div> */}
         <div className="payment-icon">
           <a href="#" onClick={handleToggleModal}>
             <img
