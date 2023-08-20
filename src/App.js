@@ -13,8 +13,9 @@ const App = () => {
       <div className="app-main">
         <Router>
           <Routes>
+            <Route path="/TransConnect" element={<LoginPage />} />
+            <Route path="/" element={<LoginPage />} />
             <Route path="/dashboard" element={<DashBoard />} />
-            <Route path="" element={<LoginPage />} />
 
             <Route path="/about" element={<About />} />
           </Routes>

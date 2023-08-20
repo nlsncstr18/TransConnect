@@ -80,14 +80,11 @@ import {
   INCREMENT_OUTBOUND_MONU,
   DECREMENT_OUTBOUND_MONU,
   SET_CONFIRMATION_SUBMIT,
-
-
 } from "./actions";
 
 const initialState = {
   set_confirmation: false,
   set_confirmation_submit: false,
-
 
   passengers: 0,
   paid: 0,
@@ -131,7 +128,6 @@ const initialState = {
   outbound_passengers_monumento: 0,
 };
 
-
 // Load state from local storage
 const savedState = localStorage.getItem("state");
 const initialStateWithSavedState = savedState
@@ -141,13 +137,12 @@ const initialStateWithSavedState = savedState
 const reducer = (state = initialStateWithSavedState, action) => {
   let newState;
   switch (action.type) {
-
     case "SUBTRACT_PASSENGERS":
       return {
         ...state,
-        tPassengers: state.tPassengers > 0 ? state.tPassengers - action.payload : 0,
-      }
-
+        tPassengers:
+          state.tPassengers > 0 ? state.tPassengers - action.payload : 0,
+      };
 
     case "SET_CONFIRMATION_TRUE":
       return {
@@ -260,9 +255,6 @@ const reducer = (state = initialStateWithSavedState, action) => {
         passengers: 0,
       };
 
-
-
-
     case INCREMENT_PASSENGERS:
       newState = {
         ...state,
@@ -278,7 +270,6 @@ const reducer = (state = initialStateWithSavedState, action) => {
       };
       break;
     case INCREMENT_PAID:
-
       newState = {
         ...state,
         paid: state.paid + 1,
@@ -857,8 +848,6 @@ const reducer = (state = initialStateWithSavedState, action) => {
 
   // // Save state to local storage
   // localStorage.setItem("state", JSON.stringify(newState));
-
-
 };
 
 export default reducer;

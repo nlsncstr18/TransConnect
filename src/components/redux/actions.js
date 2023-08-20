@@ -99,20 +99,17 @@ export const CLEAR_VALUES_TRAMO = "CLEAR_VALUES_TRAMO";
 export const CLEAR_VALUES_TAFT = "CLEAR_VALUES_TAFT";
 export const CLEAR_VALUES_MACAPAGAL = "CLEAR_VALUES_MACAPAGAL";
 export const CLEAR_VALUES_MOA = "CLEAR_VALUES_MOA";
-export const SUBTRACT_PASSENGERS = 'SUBTRACT_PASSENGERS';
-export const CLEAR_PASSENGERS = 'CLEAR_PASSENGERS';
-
+export const SUBTRACT_PASSENGERS = "SUBTRACT_PASSENGERS";
+export const CLEAR_PASSENGERS = "CLEAR_PASSENGERS";
 
 export const clearPassengers = () => ({
   type: CLEAR_PASSENGERS,
 });
 
-
 export const subtractPassengers = (amount) => ({
   type: SUBTRACT_PASSENGERS,
   payload: amount,
 });
-
 
 export const clearValuesMonumento = () => ({
   type: CLEAR_VALUES_MONUMENTO,
@@ -181,7 +178,6 @@ export const setConfirmationSubmit = (value) => ({
   type: SET_CONFIRMATION_SUBMIT,
   payload: value,
 });
-
 
 export const incrementPassengers = () => ({
   type: INCREMENT_PASSENGERS,
