@@ -1,0 +1,465 @@
+.prompt {
+  border: 1px solid black;
+  border-radius: 20px;
+
+  position: absolute;
+  top: 55%;
+  right: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 200px;
+  background: transparent;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+
+  -webkit-box-shadow: 0 10px 6px -6px #000000;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: #000000 0px 10px 36px 0px, #000000 0px 0px 0px 1px;
+}
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-weight: bold;
+  color: rgb(4, 4, 4);
+  padding: 20px;
+  text-align: center;
+
+  font-size: 15px;
+}
+.map-container {
+  width: auto;
+  height: 100%;
+  margin: 0;
+}
+.img-icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.img-payment-icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.img-passenger-icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.img-plus-icon {
+  width: 30px;
+  height: 30px;
+}
+.img-minus-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.img-bus-icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.img-table-icon {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+}
+.icons {
+  border-radius: 15px;
+
+  background: transparent;
+  backdrop-filter: blur(5px);
+  transition: all 0.2s ease-in-out;
+  margin: 10px;
+  -webkit-box-shadow: 0 10px 6px -6px #080707;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+
+@media screen and (orientation: landscape) {
+  .overlay {
+    top: 3%;
+    left: 50%;
+    width: 250px;
+    height: 170px;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid rgb(189, 178, 178);
+    transform: translateX(-50%);
+  }
+  .passenger-icon {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* position: absolute;
+    top: 20%;
+    right: 88%; */
+    /* margin-left: -50px; */
+    width: 80px;
+    height: 50px;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(20px);
+    margin: 20px;
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+  }
+  .bus-icon {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* position: absolute;
+    top: 20%;
+    right: 88%; */
+    /* margin-left: -50px; */
+    width: 80px;
+    height: 50px;
+    background: transparent;
+
+    backdrop-filter: blur(20px);
+    margin: 20px;
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+  }
+  .controlContainer {
+    border: 1px solid black;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 55%;
+    right: 77%;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 200px;
+    background: transparent;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+
+    -webkit-box-shadow: 0 10px 6px -6px #000000;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: #000000 0px 10px 36px 0px, #000000 0px 0px 0px 1px;
+  }
+  .passengerControl {
+    display: flex;
+    width: 100%;
+    height: 50px;
+
+    align-items: center;
+
+    flex-direction: row;
+
+    border-bottom: 1px solid black;
+  }
+  .add {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #343434;
+    border: none;
+    font-size: 30px;
+    color: #0eead0;
+    font-weight: 900;
+
+    text-shadow: 0 0 7px #0eead0, 0 0 10px #0eead0, 0 0 21px #0eead0, 0 0 42px;
+  }
+  .minus {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #343434;
+    border: none;
+    color: #ed2939;
+    font-size: 30px;
+    font-weight: 900;
+    border-right: 1px solid black;
+    text-shadow: 0 0 7px #ed2939, 0 0 10px #ed2939, 0 0 21px #ed2939, 0 0 42px;
+  }
+  .minus:active,
+  .add:active {
+    /* Define the color you want when the button is clicked */
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+
+  .info-status {
+    font-size: small;
+
+    font-weight: bold;
+    color: #b0a3a3;
+    /* text-shadow: 0 0 7px #000000, 0 0 10px #000000, 0 0 21px #000000, 0 0 42px; */
+  }
+  .infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .green-text {
+    color: rgb(0, 5, 0);
+  }
+
+  .clickContainer {
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 93%;
+
+    width: 90px;
+    height: 300px;
+    background: transparent;
+
+    flex-direction: column;
+  }
+
+  /* .passengerControl {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    width: 120px;
+    height: 50px;
+    /* position: absolute; */
+  /* display: flex; */
+  /* top: 20%;
+    right: 80%; */
+  /* background: black;
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(20px);
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+  } */
+  .passengers-numbers {
+    color: #00fde0;
+  }
+
+  .table-icon {
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* position: absolute;
+
+    top: 50%;
+    right: 88%; */
+    margin: 20px;
+    width: 80px;
+    height: 50px;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(20px);
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+  }
+  .payment-icon:hover {
+    transform: scale(1.3);
+    background: rgb(0, 0, 0);
+  }
+
+  .passenger-icon:hover {
+    transform: scale(1.3);
+    background: rgb(0, 0, 0);
+  }
+
+  .bus-icon:hover {
+    transform: scale(1.3);
+    background: rgb(0, 0, 0);
+  }
+
+  .payment-icon {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 40px;
+    background: rgb(0, 0, 0);
+    transition: all 0.2s ease-in-out;
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+  }
+  .pay-button {
+    background: transparent;
+    border: none;
+    font-weight: 900;
+    font-size: 1.5rem;
+
+    color: #01f7a1;
+    text-shadow: 0 0 7px #01f7a1, 0 0 10px #01f7a1, 0 0 21px #01f7a1, 0 0 42px;
+  }
+
+  .payment-icon {
+    top: 90%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -50px;
+  }
+
+  .directionButton {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 80%;
+    border: none;
+
+    border-radius: 30px;
+    background: black;
+    font-weight: 900;
+    font-size: small;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+  }
+  .directionButton:active {
+    background: rgb(77, 70, 70);
+  }
+
+  .LiveInfo {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%);
+
+    width: 200px;
+    height: 300px;
+    background: transparent;
+
+    flex-direction: column;
+  }
+
+  .route-info-stop {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 7px #010101, 0 0 10px #000000, 0 0 21px #000000, 0 0 42px;
+  }
+
+  .route-mode {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: #b0a3a3;
+    /* color: #01f7a1;
+    text-shadow: 0 0 7px #01f7a1, 0 0 10px #01f7a1, 0 0 21px #01f7a1, 0 0 42px; */
+  }
+  .isFollow {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    top: 15%;
+    left: 87%;
+    background-color: black;
+    width: 70px; /* Adjust the width as needed */
+    height: 70px; /* Adjust the height as needed */
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 50%; /* Use 50% to create a circular button */
+    text-align: center;
+    font-size: small;
+    color: #000000;
+    font-weight: 900;
+    text-shadow: 0 0 7px #000000, 0 0 10px #000000, 0 0 21px #000000, 0 0 42px;
+  }
+  .isFollow:active {
+    background-color: white;
+  }
+  .isSimulation {
+    position: fixed;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    top: 87%;
+    left: 87%;
+    background-color: transparent;
+    width: 70px; /* Adjust the width as needed */
+    height: 70px; /* Adjust the height as needed */
+    font-size: 10px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 50%; /* Use 50% to create a circular button */
+    text-align: center;
+
+    color: #000000;
+    font-weight: 900;
+    text-shadow: 0 0 7px #000000, 0 0 10px #000000, 0 0 21px #000000, 0 0 42px;
+  }
+  .isSimulation:active {
+    background-color: transparent;
+  }
+
+  .ok-button {
+    border: none;
+    background: black;
+    position: absolute;
+    margin-left: 20%;
+    border: 1px solid black;
+
+    color: #01f7a1;
+    font-weight: 900;
+  }
+  .ok-button:active {
+    background: transparent;
+  }
+}

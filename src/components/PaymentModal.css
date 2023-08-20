@@ -1,0 +1,200 @@
+.payment-section {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(247, 243, 243);
+  color: #f3f8f6;
+  margin-top: 20px;
+}
+select {
+  border: none;
+  padding: 12px;
+  margin: 20px;
+
+  font-size: 16px;
+  border-radius: 10px;
+}
+.distance {
+  text-align: center;
+  color: rgb(2, 239, 144);
+}
+.duration {
+  text-align: center;
+  color: rgb(2, 239, 144);
+  margin-bottom: 20px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+
+  height: 50px;
+  color: rgb(2, 239, 144);
+  font-size: 100px;
+}
+.option1 option:first-child {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+.option2 option:first-child {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+}
+.option1 {
+  color: rgb(2, 239, 144);
+  font-size: larger;
+  font-weight: bolder;
+  font-family: Courier New;
+  background-color: #272525;
+  -webkit-box-shadow: 0 10px 6px -6px #080707;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+.option2 {
+  color: rgb(2, 239, 144);
+  font-size: larger;
+  font-weight: bolder;
+  font-family: Courier New;
+  background-color: #272525;
+  -webkit-box-shadow: 0 10px 6px -6px #080707;
+  -moz-box-shadow: 0 10px 6px -6px #000000;
+  box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+
+.save-button {
+  position: absolute;
+  top: 53%;
+  left: 75%;
+  width: 100px;
+}
+.savebutton {
+  position: absolute;
+  border: 1px solid black;
+  width: 100px;
+  height: 50px;
+  color: black;
+
+  background: #00fde0;
+
+  border-radius: 100px;
+  -webkit-box-shadow: 0 10px 6px -6px rgb(2, 239, 144);
+  -moz-box-shadow: 0 10px 6px -6px rgb(2, 239, 144);
+  box-shadow: rgb(2, 239, 144) 0px 10px 36px 0px,
+    rgb(2, 239, 144) 0px 0px 0px 1px;
+}
+.savebutton:hover {
+  background: rgb(2, 239, 144);
+}
+
+.payment-info {
+  color: #a2beaf;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bolder;
+  align-items: center;
+}
+
+@media screen and (orientation: portrait) {
+  .payment-container {
+    position: absolute;
+    top: 25%;
+    left: 2.5%;
+    padding: 20px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+
+    background: transparent;
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease-in-out;
+
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0px 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+
+    width: 60%;
+    height: 70%;
+  }
+  .savebutton {
+    width: 80%;
+    top: 90%;
+    position: absolute;
+  }
+}
+@media screen and (orientation: landscape) {
+  .payment-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 25px;
+    background: rgb(28, 27, 27);
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease-in-out;
+    -webkit-box-shadow: 0 10px 6px -6px #080707;
+    -moz-box-shadow: 0 10px 6px -6px #000000;
+    box-shadow: rgb(3, 3, 3) 0pEx 10px 36px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+    width: 70%;
+    height: 80%;
+    padding: 20px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .savebutton {
+    width: 80%;
+
+    position: absolute;
+  }
+
+  /* style the scrollbar */
+  .payment-container::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .payment-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .payment-container::-webkit-scrollbar-thumb {
+    background-color: rgb(11, 1, 1);
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+}
+.input-box label {
+  position: absolute;
+  top: 10%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-weight: 900;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -1rem;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 2rem;
+  padding-left: 5px;
+  text-align: center;
+}
