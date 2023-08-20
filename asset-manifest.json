@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/TransConnect/static/css/main.d7407cbd.css",
-    "main.js": "/TransConnect/static/js/main.c4d1f94f.js",
+    "main.js": "/TransConnect/static/js/main.656db6ef.js",
     "static/media/sample3.mp4": "/TransConnect/static/media/sample3.6e5167e69ff56481069b.mp4",
     "static/media/sample2.mp4": "/TransConnect/static/media/sample2.8c53faeb3e08aa28e1a0.mp4",
     "static/media/back_gray.jpg": "/TransConnect/static/media/back_gray.df3f31dbb09cfd7462a3.jpg",
@@ -9,10 +9,10 @@
     "static/media/busStops.png": "/TransConnect/static/media/busStops.ce0015873e38112afb89.png",
     "index.html": "/TransConnect/index.html",
     "main.d7407cbd.css.map": "/TransConnect/static/css/main.d7407cbd.css.map",
-    "main.c4d1f94f.js.map": "/TransConnect/static/js/main.c4d1f94f.js.map"
+    "main.656db6ef.js.map": "/TransConnect/static/js/main.656db6ef.js.map"
   },
   "entrypoints": [
     "static/css/main.d7407cbd.css",
-    "static/js/main.c4d1f94f.js"
+    "static/js/main.656db6ef.js"
   ]
 }
