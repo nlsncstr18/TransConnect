@@ -1,19 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./PaymentModal.css";
 
-
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 
-
 import {
   setConfirmationSubmit,
-
   incrementPaid,
-
   decrementUnpaid,
-
 } from "../components/redux/actions";
 function PaymentModal() {
   // const [from, setFrom] = useState("From");
@@ -46,25 +41,17 @@ function PaymentModal() {
   const [pickupLocation, setPickupLocation] = useState("");
 
   const handleClick = (value) => {
-
-
-
     if (value === "clear") {
       localStorage.removeItem("inputValue");
-      setPickupLocation("")
-      setDropoffLocation("")
+      setPickupLocation("");
+      setDropoffLocation("");
       setInputValue("");
-    }
-    else if (value === "delete") {
+    } else if (value === "delete") {
       setInputValue((prevValue) => prevValue.slice(0, -1));
-    }
-    else if (value === "submit" && inputValue.length === 6) {
+    } else if (value === "submit" && inputValue.length === 6) {
+      const myBooleanValue = localStorage.getItem("myBooleanValue");
 
-
-      const myBooleanValue = localStorage.getItem('myBooleanValue');
-
-
-      if (myBooleanValue === 'true') {
+      if (myBooleanValue === "true") {
         dispatch(setConfirmationSubmit(true));
         toast.success("Ticket Submitted", {
           position: toast.POSITION.TOP_CENTER,
@@ -73,11 +60,11 @@ function PaymentModal() {
           toastStyle: { fontSize: "30px" },
         });
         localStorage.setItem("inputValue", inputValue);
-        dispatch(decrementUnpaid())
-        dispatch(incrementPaid())
+        dispatch(decrementUnpaid());
+        dispatch(incrementPaid());
         localStorage.removeItem("inputValue");
-        setPickupLocation("")
-        setDropoffLocation("")
+        setPickupLocation("");
+        setDropoffLocation("");
         setInputValue("");
       } else {
         toast.error("Invalid Code", {
@@ -87,27 +74,16 @@ function PaymentModal() {
           toastStyle: { fontSize: "30px" },
         });
         setInputValue("");
-        setPickupLocation("")
-        setDropoffLocation("")
-
+        setPickupLocation("");
+        setDropoffLocation("");
       }
-
-
-
-
-    }
-    else {
+    } else {
       setInputValue((prevValue) => {
-
-
         const newValue = prevValue + value.toString();
 
         return newValue.slice(0, 6);
-
-
       });
     }
-
   };
   useEffect(() => {
     const interval = setInterval(() => {
@@ -126,121 +102,85 @@ function PaymentModal() {
   }, [inputValue]);
 
   useEffect(() => {
-
     const isExisting = localStorage.getItem("isExisting");
     if (isExisting === "true" && inputValue) {
-      const dropoffLocation = localStorage.getItem('dropoffLocation');
+      const dropoffLocation = localStorage.getItem("dropoffLocation");
       if (dropoffLocation === "0") {
         setDropoffLocation("Monumento");
-      }
-      else if (dropoffLocation === "1") {
+      } else if (dropoffLocation === "1") {
         setDropoffLocation("Bagong Barrio");
-      }
-      else if (dropoffLocation === "2") {
-        setDropoffLocation("Balintawak")
-      }
-      else if (dropoffLocation === "3") {
+      } else if (dropoffLocation === "2") {
+        setDropoffLocation("Balintawak");
+      } else if (dropoffLocation === "3") {
         setDropoffLocation("Kaingin");
-      }
-      else if (dropoffLocation === "4") {
+      } else if (dropoffLocation === "4") {
         setDropoffLocation("Roosevelt");
-      }
-      else if (dropoffLocation === "5") {
+      } else if (dropoffLocation === "5") {
         setDropoffLocation("North Ave");
-      }
-      else if (dropoffLocation === "6") {
+      } else if (dropoffLocation === "6") {
         setDropoffLocation("Quezon Ave");
-      }
-      else if (dropoffLocation === "7") {
+      } else if (dropoffLocation === "7") {
         setDropoffLocation("Nepa Q Mart");
-      }
-      else if (dropoffLocation === "8") {
+      } else if (dropoffLocation === "8") {
         setDropoffLocation("Main Ave");
-      }
-      else if (dropoffLocation === "9") {
+      } else if (dropoffLocation === "9") {
         setDropoffLocation("Santolan");
-      }
-      else if (dropoffLocation === "10") {
+      } else if (dropoffLocation === "10") {
         setDropoffLocation("Ortigas");
-      }
-      else if (dropoffLocation === "11") {
+      } else if (dropoffLocation === "11") {
         setDropoffLocation("Guadalupe");
-      }
-      else if (dropoffLocation === "12") {
+      } else if (dropoffLocation === "12") {
         setDropoffLocation("Buendia");
-      }
-      else if (dropoffLocation === "13") {
+      } else if (dropoffLocation === "13") {
         setDropoffLocation("Ayala");
-      }
-      else if (dropoffLocation === "14") {
+      } else if (dropoffLocation === "14") {
         setDropoffLocation("Tramo");
-      }
-      else if (dropoffLocation === "15") {
+      } else if (dropoffLocation === "15") {
         setDropoffLocation("Taft");
-      }
-      else if (dropoffLocation === "16") {
+      } else if (dropoffLocation === "16") {
         setDropoffLocation("Macapagal");
-      }
-      else if (dropoffLocation === "17") {
+      } else if (dropoffLocation === "17") {
         setDropoffLocation("Moa");
       }
 
-      const pickupLocation = localStorage.getItem('pickupLocation');
+      const pickupLocation = localStorage.getItem("pickupLocation");
       if (pickupLocation === "0") {
         setPickupLocation("Monumento");
-      }
-      else if (pickupLocation === "1") {
+      } else if (pickupLocation === "1") {
         setPickupLocation("Bagong Barrio");
-      }
-      else if (pickupLocation === "2") {
-        setPickupLocation("Balitawag")
-      }
-      else if (pickupLocation === "3") {
+      } else if (pickupLocation === "2") {
+        setPickupLocation("Balitawag");
+      } else if (pickupLocation === "3") {
         setPickupLocation("Kaingin");
-      }
-      else if (pickupLocation === "4") {
+      } else if (pickupLocation === "4") {
         setPickupLocation("Roosevelt");
-      }
-      else if (pickupLocation === "5") {
+      } else if (pickupLocation === "5") {
         setPickupLocation("North Ave");
-      }
-      else if (pickupLocation === "6") {
+      } else if (pickupLocation === "6") {
         setPickupLocation("Quezon Ave");
-      }
-      else if (pickupLocation === "7") {
+      } else if (pickupLocation === "7") {
         setPickupLocation("Nepa Q Mart");
-      }
-      else if (pickupLocation === "8") {
+      } else if (pickupLocation === "8") {
         setPickupLocation("Main Ave");
-      }
-      else if (pickupLocation === "9") {
+      } else if (pickupLocation === "9") {
         setPickupLocation("Santolan");
-      }
-      else if (pickupLocation === "10") {
+      } else if (pickupLocation === "10") {
         setPickupLocation("Ortigas");
-      }
-      else if (pickupLocation === "11") {
+      } else if (pickupLocation === "11") {
         setPickupLocation("Guadalupe");
-      }
-      else if (pickupLocation === "12") {
+      } else if (pickupLocation === "12") {
         setPickupLocation("Buendia");
-      }
-      else if (pickupLocation === "13") {
+      } else if (pickupLocation === "13") {
         setPickupLocation("Ayala");
-      }
-      else if (pickupLocation === "14") {
+      } else if (pickupLocation === "14") {
         setPickupLocation("Tramo");
-      }
-      else if (pickupLocation === "15") {
+      } else if (pickupLocation === "15") {
         setPickupLocation("Taft");
-      }
-      else if (pickupLocation === "16") {
+      } else if (pickupLocation === "16") {
         setPickupLocation("Macapagal");
-      }
-      else if (pickupLocation === "17") {
+      } else if (pickupLocation === "17") {
         setPickupLocation("Moa");
       }
-
     }
   }, [localStorage.getItem("isExisting")]);
 
@@ -290,7 +230,6 @@ function PaymentModal() {
   //   // Clear the interval when the component unmounts
   //   return () => clearInterval(intervalId);
   // }, [currentLocations]);
-
 
   // const handleFrom = (e) => {
   //   setFrom(e.target.value);
@@ -436,28 +375,20 @@ function PaymentModal() {
   //     dispatch(incrementPaid());
   //     dispatch(decrementUnpaid());
 
-
   // }
   // }
 
   return (
     <>
-
       <div className="payment-container">
-
         <div className="d-flex justify-content-center mt-2">
           <div className="row text-center">
             <p className="text-white">From: {pickupLocation}</p>
             <p className="text-white">To: {dropoffLocation}</p>
-
-
           </div>
         </div>
 
-
-
-
-        <form >
+        <form>
           {/* <div className="payment-info">
             <label>
               <select className="option1" value={from} onChange={handleFrom}>
@@ -704,8 +635,6 @@ function PaymentModal() {
             <br />
           </div> */}
           <div className="distance">
-
-
             <input
               className="mb-1 text-center border-0 px-1 border-bottom bg-transparent text-white text-xg fw-bold"
               type="text"
@@ -715,16 +644,11 @@ function PaymentModal() {
                 const truncatedValue = value.slice(0, 6); // limit the value to 6 digits
                 setInputValue(truncatedValue);
               }}
-              style={{ letterSpacing: '0.5em' }} // Add letter spacing to create spacing between digits
+              style={{ letterSpacing: "0.5em" }} // Add letter spacing to create spacing between digits
             />
-
-
           </div>
           <div className="d-flex flex-row">
-
             <div className="grid-container mt-1">
-
-
               <div className="grid-item" onClick={() => handleClick(7)}>
                 7
               </div>
@@ -761,16 +685,17 @@ function PaymentModal() {
               <div className="grid-item" onClick={() => handleClick("delete")}>
                 delete
               </div>
-              <div >
-
-              </div>
-
+              <div></div>
             </div>
-            <div className={`grid-item ${inputValue.length === 6 ? 'bg-success' : ''}`} onClick={() => handleClick("submit")}>
+            <div
+              className={`grid-item ${
+                inputValue.length === 6 ? "bg-success" : ""
+              }`}
+              onClick={() => handleClick("submit")}
+            >
               Submit
             </div>
             <ToastContainer />
-
           </div>
 
           {/* <div className="result">{sum ? `₱${sum}` : "₱0"}</div>
@@ -794,9 +719,7 @@ function PaymentModal() {
 
           </div>
         </div> */}
-
       </div>
-
     </>
   );
 }

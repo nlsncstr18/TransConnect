@@ -4,7 +4,7 @@ import "./DashBoard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarDash from "../components/NavbarDash";
 import Mapbox from "../components/Mapbox";
-import io from "socket.io-client";
+
 
 import PaymentModal from "../components/PaymentModal";
 
